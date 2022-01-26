@@ -31,3 +31,4 @@ jobs:
       - name: Build container (tagged)
         if: ${{ github.ref != 'refs/heads/master' }}
         run: 'docker buildx build --push -t jackbit/ghostunnel:$(git describe --tags --abbrev=0) --platform linux/amd64,linux/arm64,linux/arm/v7 .'
+

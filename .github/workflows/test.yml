@@ -45,7 +45,7 @@ jobs:
         with:
           files: ./coverage-merged.out
           flags: linux
-          fail_ci_if_error: true
+          fail_ci_if_error: false
           verbose: true
     
   integration-darwin:
@@ -76,5 +76,5 @@ jobs:
         with:
           files: ./coverage-merged.out
           flags: darwin
-          fail_ci_if_error: true
+          fail_ci_if_error: false
           verbose: true

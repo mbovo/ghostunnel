@@ -27,7 +27,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build container (latest)
         if: ${{ github.ref == 'refs/heads/master' }}
-        run: 'docker buildx build --push -t ghostunnel/ghostunnel:latest --platform linux/amd64,linux/arm64,linux/arm/v7 .'
+        run: 'docker buildx build --push -t jackbit/ghostunnel:latest --platform linux/amd64,linux/arm64,linux/arm/v7 .'
       - name: Build container (tagged)
         if: ${{ github.ref != 'refs/heads/master' }}
-        run: 'docker buildx build --push -t ghostunnel/ghostunnel:$(git describe --tags --abbrev=0) --platform linux/amd64,linux/arm64,linux/arm/v7 .'
+        run: 'docker buildx build --push -t jackbit/ghostunnel:$(git describe --tags --abbrev=0) --platform linux/amd64,linux/arm64,linux/arm/v7 .'
